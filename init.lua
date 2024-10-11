@@ -1,7 +1,7 @@
 --[[
 
 =====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
+==================== ПРОЧТИТЕ ПЕРЕД ПРОДОЛЖЕНИЕМ ====================
 =====================================================================
 ========                                    .-----.          ========
 ========         .----------------------.   | === |          ========
@@ -10,100 +10,100 @@
 ========         ||   KICKSTART.NVIM   ||   |-----|          ========
 ========         ||                    ||   | === |          ========
 ========         ||                    ||   |-----|          ========
-========         ||:Tutor              ||   |:::::|          ========
+========         ||:Учебник            ||   |:::::|          ========
 ========         |'-..................-'|   |____o|          ========
 ========         `"")----------------(""`   ___________      ========
-========        /::::::::::|  |::::::::::\  \ no mouse \     ========
-========       /:::========|  |==hjkl==:::\  \ required \    ========
+========        /::::::::::|  |::::::::::\  \ без мыши \     ========
+========       /:::========|  |==hjkl==:::\  \ не нужно \    ========
 ========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
 ========                                                     ========
 =====================================================================
 =====================================================================
 
-What is Kickstart?
+Что такое Kickstart?
 
-  Kickstart.nvim is *not* a distribution.
+  Kickstart.nvim *не* является дистрибуцией.
 
-  Kickstart.nvim is a starting point for your own configuration.
-    The goal is that you can read every line of code, top-to-bottom, understand
-    what your configuration is doing, and modify it to suit your needs.
+  Kickstart.nvim — это стартовая точка для вашей собственной конфигурации.
+    Цель состоит в том, чтобы вы могли прочитать каждую строку кода, от начала до конца,
+    понять, что делает ваша конфигурация, и изменить её под свои нужды.
 
-    Once you've done that, you can start exploring, configuring and tinkering to
-    make Neovim your own! That might mean leaving Kickstart just the way it is for a while
-    or immediately breaking it into modular pieces. It's up to you!
+    Как только вы это сделаете, вы сможете начать исследовать, настраивать и экспериментировать,
+    чтобы сделать Neovim своим! Это может означать, что вы оставите Kickstart как есть на какое-то время
+    или сразу разберёте его на модули. Всё зависит от вас!
 
-    If you don't know anything about Lua, I recommend taking some time to read through
-    a guide. One possible example which will only take 10-15 minutes:
+    Если вы ничего не знаете о Lua, я рекомендую потратить немного времени на изучение руководства.
+    Один из примеров, который займёт всего 10-15 минут:
       - https://learnxinyminutes.com/docs/lua/
 
-    After understanding a bit more about Lua, you can use `:help lua-guide` as a
-    reference for how Neovim integrates Lua.
+    После того как вы лучше разберётесь в Lua, вы можете использовать `:help lua-guide` 
+    в качестве справки по интеграции Lua с Neovim.
     - :help lua-guide
-    - (or HTML version): https://neovim.io/doc/user/lua-guide.html
+    - (или HTML-версия): https://neovim.io/doc/user/lua-guide.html
 
-Kickstart Guide:
+Руководство по Kickstart:
 
-  TODO: The very first thing you should do is to run the command `:Tutor` in Neovim.
+  TODO: Первое, что вы должны сделать — это выполнить команду `:Tutor` в Neovim.
 
-    If you don't know what this means, type the following:
-      - <escape key>
+    Если вы не знаете, что это значит, выполните следующие шаги:
+      - <клавиша escape>
       - :
       - Tutor
-      - <enter key>
+      - <клавиша enter>
 
-    (If you already know the Neovim basics, you can skip this step.)
+    (Если вы уже знакомы с основами Neovim, можете пропустить этот шаг.)
 
-  Once you've completed that, you can continue working through **AND READING** the rest
-  of the kickstart init.lua.
+  После того как вы это сделаете, продолжайте работать **И ЧИТАТЬ** оставшуюся часть
+  файла инициализации kickstart init.lua.
 
-  Next, run AND READ `:help`.
-    This will open up a help window with some basic information
-    about reading, navigating and searching the builtin help documentation.
+  Далее, запустите И ПРОЧИТАЙТЕ `:help`.
+    Это откроет окно справки с основной информацией
+    о чтении, навигации и поиске встроенной документации.
 
-    This should be the first place you go to look when you're stuck or confused
-    with something. It's one of my favorite Neovim features.
+    Это должно быть первое место, куда вы обращаетесь, если что-то не понятно
+    или возникли проблемы. Это одна из моих любимых функций Neovim.
 
-    MOST IMPORTANTLY, we provide a keymap "<space>sh" to [s]earch the [h]elp documentation,
-    which is very useful when you're not exactly sure of what you're looking for.
+    САМОЕ ВАЖНОЕ: Мы предоставляем привязку клавиш "<space>sh" для поиска документации [s]earch [h]elp,
+    что очень удобно, когда вы не уверены, что именно ищете.
 
-  I have left several `:help X` comments throughout the init.lua
-    These are hints about where to find more information about the relevant settings,
-    plugins or Neovim features used in Kickstart.
+  Я оставил несколько комментариев `:help X` по всему файлу init.lua.
+    Это подсказки о том, где найти дополнительную информацию по соответствующим настройкам,
+    плагинам или функциям Neovim, используемым в Kickstart.
 
-   NOTE: Look for lines like this
+   ПРИМЕЧАНИЕ: Ищите строки вроде этой
 
-    Throughout the file. These are for you, the reader, to help you understand what is happening.
-    Feel free to delete them once you know what you're doing, but they should serve as a guide
-    for when you are first encountering a few different constructs in your Neovim config.
+    Повсюду в файле. Это для вас, читатель, чтобы помочь вам понять, что происходит.
+    Не стесняйтесь удалять их, когда будете знать, что делаете, но они должны служить
+    руководством при первом знакомстве с разными конструкциями в вашей конфигурации Neovim.
 
-If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
+Если у вас возникли ошибки при установке kickstart, выполните `:checkhealth` для получения дополнительной информации.
 
-I hope you enjoy your Neovim journey,
+Надеюсь, вам понравится ваше путешествие в мире Neovim,
 - TJ
 
-P.S. You can delete this when you're done too. It's your config now! :)
+P.S. Когда закончите, можете удалить это. Теперь это ваша конфигурация! :)
 --]]
 
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- Устанавливаем <space> в качестве клавиши лидера
+-- См. `:help mapleader`
+--  ПРИМЕЧАНИЕ: Это должно происходить до загрузки плагинов (иначе будет использован неверный лидер)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+-- Установите значение true, если у вас установлен и выбран шрифт Nerd Font в терминале
+vim.g.have_nerd_font = true
 
--- [[ Setting options ]]
+-- [[ Настройка параметров ]]
 require 'options'
 
--- [[ Basic Keymaps ]]
+-- [[ Основные привязки клавиш ]]
 require 'keymaps'
 
--- [[ Install `lazy.nvim` plugin manager ]]
+-- [[ Установка менеджера плагинов `lazy.nvim` ]]
 require 'lazy-bootstrap'
 
--- [[ Configure and install plugins ]]
+-- [[ Настройка и установка плагинов ]]
 require 'lazy-plugins'
 
--- The line beneath this is called `modeline`. See `:help modeline`
+-- Строка ниже называется `modeline`. См. `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

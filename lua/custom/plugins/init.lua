@@ -1,5 +1,5 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
+-- Здесь вы можете добавить свои собственные плагины или в другие файлы в этом каталоге!
+--  Обещаю, что не создам конфликтов слияния в этом каталоге :)
 --
--- See the kickstart.nvim README for more information
+-- См. README kickstart.nvim для получения дополнительной информации
 return {}

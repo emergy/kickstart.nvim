@@ -1,65 +1,71 @@
--- [[ Setting options ]]
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
+-- [[ Настройка параметров ]]
+-- См. `:help vim.opt`
+-- ПРИМЕЧАНИЕ: Вы можете изменять эти параметры по своему усмотрению!
+--  Для дополнительных параметров см. `:help option-list`
 
--- Make line numbers default
+-- Включаем номера строк по умолчанию
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
+-- Вы также можете включить относительные номера строк для удобного перемещения.
+--  Попробуйте, чтобы понять, нравится ли вам это!
 -- vim.opt.relativenumber = true
 
--- Enable mouse mode, can be useful for resizing splits for example!
+-- Включаем режим работы с мышью, это может быть полезно для изменения размеров сплитов, например!
 vim.opt.mouse = 'a'
 
--- Don't show the mode, since it's already in the status line
+-- Не отображаем режим, так как он уже показан в строке состояния
 vim.opt.showmode = false
 
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
+-- Синхронизируем буфер обмена между ОС и Neovim.
+--  Настройка применяется после события `UiEnter`, чтобы не увеличивать время загрузки.
+--  Уберите эту опцию, если хотите, чтобы буфер обмена ОС оставался независимым.
+--  См. `:help 'clipboard'`
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
--- Enable break indent
+-- Включаем перенос с отступом
 vim.opt.breakindent = true
 
--- Save undo history
+-- Сохраняем историю отмен
 vim.opt.undofile = true
 
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+-- Поиск без учета регистра, ЕСЛИ не используется \C или в поисковом запросе нет заглавных букв
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- Keep signcolumn on by default
+-- Включаем колонку для знаков (signcolumn) по умолчанию
 vim.opt.signcolumn = 'yes'
 
--- Decrease update time
+-- Уменьшаем время обновления
 vim.opt.updatetime = 250
 
--- Decrease mapped sequence wait time
--- Displays which-key popup sooner
+-- Уменьшаем время ожидания для привязанных последовательностей клавиш
+-- Отображает всплывающее окно which-key быстрее
 vim.opt.timeoutlen = 300
 
--- Configure how new splits should be opened
+-- Настройка открытия новых сплитов
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
+-- Настройка отображения некоторых символов пробелов в редакторе.
+--  См. `:help 'list'`
+--  и `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
--- Preview substitutions live, as you type!
+-- Предпросмотр замен в реальном времени при вводе!
 vim.opt.inccommand = 'split'
 
--- Show which line your cursor is on
+-- Отображение строки, на которой находится курсор
 vim.opt.cursorline = true
 
--- Minimal number of screen lines to keep above and below the cursor.
+-- Минимальное количество строк на экране, которые нужно сохранять выше и ниже курсора
 vim.opt.scrolloff = 10
+
+-- Удобная справка справа (:help)
+vim.cmd [[
+  autocmd FileType help wincmd L
+  autocmd FileType help wincmd 82|
+]]
 
 -- vim: ts=2 sts=2 sw=2 et

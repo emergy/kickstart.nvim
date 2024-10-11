@@ -1,28 +1,28 @@
--- [[ Configure and install plugins ]]
+-- [[ Настройка и установка плагинов ]]
 --
---  To check the current status of your plugins, run
+--  Чтобы проверить текущий статус ваших плагинов, выполните
 --    :Lazy
 --
---  You can press `?` in this menu for help. Use `:q` to close the window
+--  Вы можете нажать `?` в этом меню для справки. Используйте `:q` для закрытия окна
 --
---  To update plugins you can run
+--  Для обновления плагинов выполните
 --    :Lazy update
 --
--- NOTE: Here is where you install your plugins.
+-- ПРИМЕЧАНИЕ: Здесь вы устанавливаете свои плагины.
 require('lazy').setup({
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- ПРИМЕЧАНИЕ: Плагины можно добавить с помощью ссылки (или для репозитория на github: ссылка в формате 'owner/repo').
+  'tpope/vim-sleuth', -- Автоматическое определение tabstop и shiftwidth
+  -- 'lukas-reineke/indent-blankline.nvim',
 
-  -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
+  -- ПРИМЕЧАНИЕ: Плагины также можно добавлять с помощью таблицы,
+  -- где первый аргумент — это ссылка, а следующие ключи
+  -- могут быть использованы для настройки поведения плагина/загрузки и т. д.
   --
-  -- Use `opts = {}` to force a plugin to be loaded.
+  -- Используйте `opts = {}`, чтобы принудительно загрузить плагин.
   --
 
-
-  -- modular approach: using `require 'path/name'` will
-  -- include a plugin definition from file lua/path/name.lua
+  -- модульный подход: использование `require 'path/name'`
+  -- подключает определение плагина из файла lua/path/name.lua
 
   require 'kickstart/plugins/gitsigns',
 
@@ -44,14 +44,14 @@ require('lazy').setup({
 
   require 'kickstart/plugins/treesitter',
 
-  -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
-  -- init.lua. If you want these files, they are in the repository, so you can just download them and
-  -- place them in the correct locations.
+  -- Следующие два комментария работают только если вы загрузили репозиторий kickstart, а не просто скопировали
+  -- init.lua. Если вам нужны эти файлы, они находятся в репозитории, так что вы можете их скачать и
+  -- разместить в нужных местах.
 
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
+  -- ПРИМЕЧАНИЕ: Следующий шаг в вашем путешествии с Neovim: добавьте/настройте дополнительные плагины для Kickstart
   --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
+  --  Вот некоторые примеры плагинов, которые я включил в репозиторий Kickstart.
+  --  Раскомментируйте любую из строк ниже, чтобы активировать их (вам потребуется перезапустить nvim).
   --
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
@@ -59,16 +59,16 @@ require('lazy').setup({
   -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
 
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
+  -- ПРИМЕЧАНИЕ: Импорт ниже может автоматически добавить ваши собственные плагины, настройки и т. д. из `lua/custom/plugins/*.lua`
+  --    Это самый простой способ модульной настройки конфигурации.
   --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  --  Раскомментируйте следующую строку и добавьте ваши плагины в `lua/custom/plugins/*.lua`, чтобы начать.
+  --    Для дополнительной информации см. `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
+  { import = 'custom.plugins' },
 }, {
   ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+    -- Если вы используете шрифт Nerd Font: установите icons в пустую таблицу, чтобы использовать
+    -- значки Nerd Font по умолчанию, определённые в lazy.nvim, иначе определите таблицу с юникод-значками
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
       config = '🛠',
