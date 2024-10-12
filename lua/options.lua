@@ -68,4 +68,16 @@ vim.cmd [[
   autocmd FileType help wincmd 82|
 ]]
 
+-- Сохранение последней позиции курсора при закрытии файла
+vim.api.nvim_create_autocmd('BufReadPost', {
+  pattern = '*',
+  callback = function()
+    local line = vim.fn.line
+    local last_position = line '\'"'
+    if last_position > 0 and last_position <= line '$' then
+      vim.api.nvim_win_set_cursor(0, { last_position, 0 })
+    end
+  end,
+})
+
 -- vim: ts=2 sts=2 sw=2 et
