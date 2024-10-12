@@ -29,7 +29,7 @@ return {
           -- Настройки для arm64
           if arch == 'arm64' then
             require('mason-lspconfig').setup {
-              ensure_installed = { 'elixir' },
+              ensure_installed = { 'elixirls' },
               automatic_installation = true,
             }
           end
