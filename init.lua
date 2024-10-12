@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Установите значение true, если у вас установлен и выбран шрифт Nerd Font в терминале
-vim.g.have_nerd_font = true
+vim.g.have_nerd_font = false
 
 -- [[ Настройка параметров ]]
 require 'options'
