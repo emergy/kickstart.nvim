@@ -80,4 +80,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end,
 })
 
+-- Для всех файлов *.yml, содержащих в пути директорию ansible-ng, устанавливаем тип файла yaml.ansible
+vim.cmd [[autocmd BufRead,BufNewFile **/ansible-ng/**/*.yml set filetype=yaml.ansible]]
+
 -- vim: ts=2 sts=2 sw=2 et
